@@ -1,0 +1,120 @@
+/*-- ------------------------------------- -->
+<---   Estilos Globais De Modo Escuro----- -->
+<--- ------------------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0em) {
+  :root {
+    --dark: #082032;
+    --medium: #2c394b;
+    --accent: #334756;
+  }
+
+  body.dark-mode {
+    background-color: var(--dark);
+
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+
+    // Desativar Elementos Claros
+    .light {
+      display: none;
+    }
+
+    // Ativar Os Escuros
+    .dark {
+      display: block !important;
+    }
+  }
+
+  .dark {
+    display: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Ativação Dark Mode    -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0em) {
+  // Animação
+  body.dark-mode {
+    #dark-mode-toggle {
+      .sun {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      .moon {
+        transform: translate(-50%, -150%);
+        opacity: 0;
+      }
+    }
+  }
+
+  // Ativar
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60/16em;
+    width: 48/16em;
+    height: 48/16em;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+
+    // Centraliza O Icone Dentro Do Botão
+    img,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25/16em;
+      height: 25/16em;
+      pointer-events: none;
+    }
+
+    .moon {
+      z-index: 2;
+      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+      fill: #000; // --> Muda A Cor Baseado No Modo Claro Ou Escuro
+    }
+
+    .sun {
+      z-index: 1;
+
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 64em) {
+  #dark-mode-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 30/16em;
+    margin-bottom: 0/16em;
+
+    .moon {
+      fill: #fff;
+    }
+  }
+}
