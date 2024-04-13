@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Pré-carregar -->
-    <link rel="preload" as="image" href="/images/landing-projects-m.webp" />
+    <link rel="preload" as="image" href="/images/landing-projects-s.webp" />
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin />
 
@@ -69,7 +69,7 @@
 
                 <!--Logo Dark-->
                 <img class="dark" aria-hidden="true" src="/images/logo-blue-m.webp"
-                    srcset="/images/logo-blue-m.webp, x /images/logo-blue-l.webp 2x" alt="" width="196" height="92"
+                    srcset="/images/logo-blue-m.webp 1x, /images/logo-blue-l.webp 2x" alt="" width="196" height="92"
                     decoding="async" loading="lazy">
             </a>
 
@@ -110,10 +110,11 @@
         <section id="int-hero">
             <h1 id="home-h">Galeria De Fotos</h1>
             <picture>
-                <source media="(max-width: 400px)" srcset="/images/paint-s.webp">
-                <source media="(max-width: 600px)" srcset="/images/paint-m.webp">
-                <source media="(min-width: 601px)" srcset="/images/paint.webp">
-                <img aria-hidden="true" decoding="async" src="/images/paint-s.webp" alt="" width="360" height="240">
+                <source media="(max-width: 400px)" srcset="/images/landing-projects-s.webp">
+                <source media="(max-width: 600px)" srcset="/images/landing-projects-m.webp">
+                <source media="(min-width: 601px)" srcset="/images/landing-projects.webp">
+                <img aria-hidden="true" decoding="async" src="/images/landing-projects-s.webp" alt="" width="360"
+                    height="240">
             </picture>
         </section>
 
