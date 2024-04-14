@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- Pré-carregar -->
-  <link rel="preload" as="image" href="/images/landing-m.webp" />
+  <link rel="preload" as="image" href="/images/landing-s.webp" />
   <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin />
 
@@ -129,9 +129,10 @@
         </div>
       </div>
       <picture>
-        <source media="(max-width: 600px)" srcset="/images/landing-m.webp" />
-        <source media="(min-width: 601px)" srcset="/images/landing.webp" />
-        <img aria-hidden="true" decoding="async" src="/images/landing.webp" alt="casa nova" width="600" height="750" />
+        <source media="(max-width: 400px)" srcset="/images/landing-s.webp">
+        <source media="(max-width: 750px)" srcset="/images/landing-m.webp">
+        <source media="(max-width: 1366px)" srcset="/images/landing-l.webp">
+        <img aria-hidden="true" decoding="async" src="/images/landing-s.webp" alt="" width="360" height="240">
       </picture>
     </section>
 
@@ -221,10 +222,12 @@
           <a class="button-solid" href="/about.html">Saiba Mais</a>
         </div>
         <picture class="image-box">
-          <source media="(max-width: 600px)" srcset="/images/company-m.webp" />
-          <source media="(min-width: 601px)" srcset="/images/company.webp" />
-          <img aria-hidden="true" loading="lazy" decoding="async" src="/images/company.webp"
-            alt="homem operando serra eletrica" width="500" height="333" />
+          <source media="(max-width: 400px)" srcset="/images/company-s.webp">
+          <source media="(max-width: 750px)" srcset="/images/company-m.webp">
+          <source media="(max-width: 1366px)" srcset="/images/company-l.webp">
+          <source media="(min-width: 1367px)" srcset="/images/company.webp">
+          <img aria-hidden="true" loading="lazy" decoding="async" src="/images/company-s.webp"
+            alt="engenheiros planejando a construção" width="220" height="226">
         </picture>
       </div>
     </section>
@@ -306,9 +309,10 @@
       <picture>
         <source media="(max-width: 400px)" srcset="/images/paint-s.webp">
         <source media="(max-width: 600px)" srcset="/images/paint-m.webp">
-        <source media="(min-width: 601px)" srcset="/images/paint.webp">
-        <img aria-hidden="true" loading="lazy" decoding="async" src="/images/paint-s.webp" alt="pincel de tinta"
-          width="360" height="240">
+        <source media="(max-width: 1366px)" srcset="/images/paint-l.webp">
+        <source media="(min-width: 1367px)" srcset="/images/paint.webp">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="/images/paint-s.webp" alt="" width="360"
+          height="240">
       </picture>
     </section>
 
