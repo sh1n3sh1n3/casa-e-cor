@@ -8,6 +8,15 @@
 
 ---
 
+### :green_circle: Google Lighthouse - Mobile
+
+![lighthouse_performance](https://github.com/tiagocreator/casa-e-cor/assets/82607849/f322d93c-2e16-4264-9a38-415ee415ca70)
+![lighthouse_accessibility](https://github.com/tiagocreator/casa-e-cor/assets/82607849/19af3c74-197a-4ae3-9858-bf2604df7b41)
+![lighthouse_seo](https://github.com/tiagocreator/casa-e-cor/assets/82607849/b6d214c6-f6cb-4d1d-83cb-236525377211)
+![lighthouse_best-practices](https://github.com/tiagocreator/casa-e-cor/assets/82607849/3c2acd78-d8bd-4c1d-a9c3-fe40e84260e3)
+
+---
+
 ### :sparkles: Sobre o Site
 
 Esse site utiliza o pré-processador de CCS, LESS, para usar sua capacidade de fazer cálculos de CSS para a responsividiade. Como as unidades __'em'__ são baseadas no tamanho da fonte de seu elemento pai. Se o elemento pai não tiver um tamanho de fonte declarado em seu CSS, o próximo elemento pai com um tamanho de fonte declarado será sua base. Como não estou declarando um tamanho de fonte em nenhum container, literalmente tudo na página procurará um tamanho de fonte na tag __'body'__ e, como declaramos um tamanho de fonte de __'20px'__, os containers se dividirão para obter o valor em __'em'__. Então, apenas defino o tamanho da fonte na tag __'body'__ para __'15px'__ em dispositivos móveis, tablets e desktops pequenos com até __'1023px'__ de largura. Em seguida, em __'1024px'__ de largura, é definido como __'20px'__.
