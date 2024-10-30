@@ -1,10 +1,10 @@
 ## Casa&Cor
 
-### :computer: [Link do Projeto](https://casa-e-cor.vercel.app/)
+### :computer: [Project Link](https://casa-e-cor.vercel.app/)
 
 ---
 
-#### Casa&Cor é um site 100% profissional responsivo de empresa de construção, com dark-mode e 5 páginas feito em HTML, LESS e JavaScript, sem o uso de frameworks.
+#### Casa&Cor is a 100% professional responsive construction company website, featuring dark mode and 5 pages, built in HTML, LESS, and JavaScript, without using frameworks.
 
 ---
 
@@ -17,102 +17,71 @@
 
 ---
 
-### :sparkles: Sobre o Site
+### :sparkles: About the Site
 
-Esse site utiliza o pré-processador de CCS, LESS, para usar sua capacidade de fazer cálculos de CSS para a responsividiade. Como as unidades __'em'__ são baseadas no tamanho da fonte de seu elemento pai. Se o elemento pai não tiver um tamanho de fonte declarado em seu CSS, o próximo elemento pai com um tamanho de fonte declarado será sua base. Como não estou declarando um tamanho de fonte em nenhum container, literalmente tudo na página procurará um tamanho de fonte na tag __'body'__ e, como declaramos um tamanho de fonte de __'20px'__, os containers se dividirão para obter o valor em __'em'__. Então, apenas defino o tamanho da fonte na tag __'body'__ para __'15px'__ em dispositivos móveis, tablets e desktops pequenos com até __'1023px'__ de largura. Em seguida, em __'1024px'__ de largura, é definido como __'20px'__.
-
----
-
-### Explicando o funcionamento
-
-As medidas de cada elemento que estariam em pixels agora estarão em __'ems'__ divididas em 20 (o tamanho de fonte padrão do projeto). Portanto, quando temos um elemento com __'100px'__ de largura, no arquivo __'.less'__ o escrevemos como __'100/20em'__, e o compilador o compilará em css como __'5em'__. Como o cálculo do __'em'__ é baseado em __'20px'__, quando alteramos o tamanho da fonte da tag __'body'__ para __'15px'__, ele encolherá TUDO porque os cálculos do __'em'__ estão em um tamanho de fonte menor e diminuirão proporcionalmente.
-
-Por exemplo, se um elemento tiver __'20px'__ de largura, ele será escrito como __'20/20em'__ em seu arquivo __'.less'__ e compilado para __'1em'__ em seu arquivo __'.css'__. Essa é a sua proporção. Quando alteramos o tamanho da fonte do __'body'__ (a tag pai principal de tudo) para um número menor no celular, por exemplo, (__'15px'__), estamos dimensionando o tamanho de __'1em'__ para caber em uma fonte baseada em __'15px'__ em vez de __'20px'__. __'1em'__ seria tecnicamente __'15/15em'__, o que significa que ao reduzir o tamanho da fonte da tag __'body'__ em __'5px'__, TUDO que se baseia em seu tamanho de fonte de __'20px'__ também se reduzirá em __'5px'__ em escala.
-
-Ambas as instâncias de __'15/15'__ e __'20/20'__ resultam em __'1em'__. O tamanho da fonte base do pai determina quão grande o valor __'1em'__ é escalado para cima ou para baixo por padrão. Pense em __'ems'__ como a proporção da medida e seu tamanho de fonte pai, e o tamanho da fonte da tag __'body'__ está dizendo no total, em tudo, o quão grande ou pequeno eles precisam ser. Estamos definindo a proporção com base nos estilos e medidas da fonte padrão.
-
-Quanto maior o tamanho da fonte da tag __'body'__, maior será a escala de __'1em'__. Tamanhos de fonte menores diminuem o tamanho de __'1em'__. É assim que podemos controlar a responsividade móvel. __Assim, não precisa escrever estilos CSS separados para seu celular e fazer tamanhos maiores no desktop__. Ao escrever todos os valores de __'px'__ de nossas propriedades __'css'__ em __'x/20em'__, tudo será reduzido no celular e crescerá para seu tamanho de escala final no tamanho de fonte de __'20px'__.
-
-Para que esse projeto funcione corretamente e dimensione como deveria, utilizei esse sistema de cálculo __'.less'__. Portanto, se tiver um texto __'h1'__ que deveria ter __'50px'__, eu escrevo como __'50/20em'__. Assim como eu faria normalmente. __No entando, qualquer uma de suas propriedades e filhos precisam ser divididos pelo novo tamanho de fonte declarado__. Portanto, se tiver uma margem inferior de __'20px'__, será __'20/50em'__, e não __'20/20em'__. Porque o pai tem seu próprio tamanho de fonte declarado agora.
-
-Aqui está um exemplo de como isso fica em __'.less'__ usando a tag __'h1'__:
-
-```
-h1 {
-    color: #fff;
-    font-size: 24/20em; <--- Novo tamanho de fonte declarado
-    line-height: 28/24; <--- Tudo dentro do h1 é dividido por este novo tamanho de fonte (line-height não precisa adicionar 'em')
-    margin-bottom: 15/24em; <--- Tudo dentro do h1 é dividido por este novo tamanho de fonte
-
-    span {
-        display: block;
-        color: #fff;
-        margin-bottom: 50/24em; <--- Tudo dentro do h1 é dividido por este novo tamanho de fonte
-    }
-}
-```
-
-Além disso, se essa tag __'span'__ tiver um tamanho de fonte diferente da tag __'h1'__, eu declaro o novo tamanho da fonte dividido pelo novo tamanho da fonte do pai.
-
-```
-h2 {
-    font-size: 24/20em; <--- Novo tamanho de fonte
-
-    span {
-        display: block;
-        color: #fff;
-        font-size: 50/24em  <--- Novo tamanho de fonte declarado, dividido pelo tamanho da fonte da tag pai
-        margin-bottom: 50/50em; <--- Tudo dentro da tag span é dividido por este novo tamanho de fonte
-    }
-} 
-```
+This site uses the CSS preprocessor, LESS, to leverage its ability to perform CSS calculations for responsiveness. Since the __'em'__ units are based on the font size of their parent element, if the parent element doesn’t have a font size declared in its CSS, the next parent with a declared font size will be its base. Since I haven’t declared a font size on any container, everything on the page will look for a font size in the __'body'__ tag. We set a font size of __'20px'__, and the containers divide to get the value in __'em'__. So, I just set the font size in the __'body'__ tag to __'15px'__ on mobile devices, tablets, and small desktops up to __'1023px'__ wide. Then, at __'1024px'__, it’s set to __'20px'__.
 
 ---
 
-### Como modificar os estilos projeto e usar esse sistema no seu computador
+### Explanation of Functionality
 
-1. Eu utilizei o pré-processador LESS para usar sua capacidade de fazer cálculos.
+Each element's measurements that would be in pixels are now in __'ems'__ divided by 20 (the project's default font size). So, when we have an element with __'100px'__ width, we write it as __'100/20em'__ in the __'.less'__ file, and the compiler will render it in CSS as __'5em'__. Since the __'em'__ calculation is based on __'20px'__, changing the font size of the __'body'__ tag to __'15px'__ will shrink EVERYTHING because __'em'__ calculations are based on a smaller font size and will scale down proportionally.
 
-Para instalar o pré-processador LESS, primeiro você deve baixar e instalar o __npm__ para poder instalar qualquer programa que desejar com uma linha de código.
-Após instalar o __npm__, instale o LESS usando o seguinte comando no seu terminal:
+For example, if an element has __'20px'__ width, it will be written as __'20/20em'__ in your __'.less'__ file and compiled to __'1em'__ in your __'.css'__ file. This is the proportion. When we change the __'body'__ tag font size (the main parent tag for everything) to a smaller number on mobile, say __'15px'__, we’re scaling the size of __'1em'__ to fit a font size based on __'15px'__ instead of __'20px'__. __'1em'__ would technically be __'15/15em'__, meaning that by reducing the font size of the __'body'__ tag by __'5px'__, everything that is based on its font size of __'20px'__ will also reduce by __'5px'__ in scale.
+
+Both __'15/15'__ and __'20/20'__ instances result in __'1em'__. The parent’s base font size determines how large __'1em'__ is scaled up or down by default. Think of __'ems'__ as the measurement ratio to its parent font size, and the font size of the __'body'__ tag tells everything how large or small they should be overall. We set the proportion based on standard styles and measurements.
+
+The larger the font size of the __'body'__ tag, the larger the __'1em'__ scale will be. Smaller font sizes decrease the __'1em'__ size. This is how we control mobile responsiveness. __This way, there's no need to write separate CSS styles for mobile and make larger sizes for the desktop__. By writing all __'css'__ properties' __'px'__ values as __'x/20em'__, everything will shrink on mobile and grow to its final scale size at the __'20px'__ font size.
+
+For the project to work correctly and scale as it should, I used this __'.less'__ calculation system. So, if you have an __'h1'__ text that should be __'50px'__, you write it as __'50/20em'__. Just as I would normally. __However, any of its properties and children need to be divided by the newly declared font size__. So if there’s a bottom margin of __'20px'__, it will be __'20/50em'__, not __'20/20em'__, because the parent now has its own font size declared.
+
+
+---
+
+### How to Modify Project Styles and Use This System on Your Computer
+
+1. I used the LESS preprocessor to take advantage of its calculation capabilities.
+
+To install the LESS preprocessor, you should first download and install __npm__ so you can install any program with a single line of code.
+After installing __npm__, install LESS with the following command in your terminal:
 
 __npm install less__
 
-2. Eu uso o aplicativo Koala para compilar os arquivos LESS para CSS, com a função de compilação automática em tempo real.
+2. I use the Koala app to compile LESS files to CSS, with a real-time auto-compilation function.
 
-Aqui está um link para baixar o Koala:
+Here’s a link to download Koala:
 http://koala-app.com/
 
-Clique no ícone de __'+'__ e selecione a pasta __css__ do projeto para iniciar o processo de compilação de LESS para CSS. Enquanto o aplicativo estiver aberto, ele irá monitorar e compilar automaticamente.
+Click on the __'+'__ icon and select the project’s __css__ folder to start the LESS to CSS compilation process. As long as the app is open, it will monitor and compile automatically.
 
 ![koala](https://user-images.githubusercontent.com/82607849/235378495-3ba4dced-2001-4dde-9e6a-3760eca83d2b.png)
 
 ---
 
-### :notebook: Licença
+### :notebook: License
 
-Criado e distribuído sob a licença __GPL v3__, veja LICENSE.txt para mais informações.
+Created and distributed under the __GPL v3__ license. See LICENSE.txt for more information.
   
 ---
 
-### :handshake: Contribuições
+### :handshake: Contributions
 
-As contribuições são o que torna a comunidade de código aberto um lugar incrível para aprender, se inspirar e criar. Qualquer contribuições que você fizer são muito apreciadas.
+Contributions are what make the open-source community an amazing place to learn, get inspired, and create. Any contributions you make are greatly appreciated.
 
-Se você tiver uma sugestão para melhorar o projeto, faça um fork do repositório e crie uma solicitação pull. Você também pode simplesmente abrir uma issue com a tag "melhoria". Se puder, por favor, dê para dar uma estrela ao projeto! Obrigado.
+If you have a suggestion for improving the project, fork the repository and create a pull request. You can also simply open an issue with the "enhancement" tag. If you can, please star the project! Thank you.
 
 ---  
 
-### Imagens
+### Images
 
-Página Home Light:
+Home Page Light:
 
 ![home-light](https://github.com/tiagocreator/casa-e-cor/assets/82607849/228dffe4-b32d-461e-80c7-d08db6a27a2c)
 
-Página Home Dark Mobile:
+Home Page Dark Mobile:
 
 ![home-dark-mobile](https://github.com/tiagocreator/casa-e-cor/assets/82607849/1599b5f3-cf55-4b18-ae14-bfc90150b963)
 
 ---
 
-### :computer: [Link do Projeto](https://casa-e-cor.vercel.app/)
+### :computer: [Project Link](https://casa-e-cor.vercel.app/)
